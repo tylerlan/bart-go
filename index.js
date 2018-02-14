@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
         LISTENER
 =========================== */
 
-app.listen(PORT, () => {
+app.listen(PORT || 8000, () => {
     console.log('#############################');
     console.log(`Listening on ${PORT}`); // eslint-disable-line no-console
     console.log('#############################');
