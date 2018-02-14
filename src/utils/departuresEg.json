@@ -1,0 +1,100 @@
+// 20180212220000
+// http://localhost:8005/departures/macSouth
+
+{
+    "?xml": {
+        "@version": "1.0",
+        "@encoding": "utf-8"
+    },
+    "root": {
+        "@id": "1",
+        "uri": {
+            "#cdata-section": "http://api.bart.gov/api/etd.aspx?cmd=etd&orig=mcar&dir=s&json=y"
+        },
+        "date": "02/12/2018",
+        "time": "09:59:46 PM PST",
+        "station": [
+            {
+                "name": "MacArthur",
+                "abbr": "MCAR",
+                "etd": [
+                    {
+                        "destination": "SFO/Millbrae",
+                        "abbreviation": "MLBR",
+                        "limited": "0",
+                        "estimate": [
+                            {
+                                "minutes": "15",
+                                "platform": "4",
+                                "direction": "South",
+                                "length": "10",
+                                "color": "YELLOW",
+                                "hexcolor": "#ffff33",
+                                "bikeflag": "1",
+                                "delay": "0"
+                            },
+                            {
+                                "minutes": "35",
+                                "platform": "4",
+                                "direction": "South",
+                                "length": "10",
+                                "color": "YELLOW",
+                                "hexcolor": "#ffff33",
+                                "bikeflag": "1",
+                                "delay": "0"
+                            },
+                            {
+                                "minutes": "55",
+                                "platform": "4",
+                                "direction": "South",
+                                "length": "5",
+                                "color": "YELLOW",
+                                "hexcolor": "#ffff33",
+                                "bikeflag": "1",
+                                "delay": "0"
+                            }
+                        ]
+                    },
+                    {
+                        "destination": "Warm Springs",
+                        "abbreviation": "WARM",
+                        "limited": "0",
+                        "estimate": [
+                            {
+                                "minutes": "17",
+                                "platform": "2",
+                                "direction": "South",
+                                "length": "6",
+                                "color": "ORANGE",
+                                "hexcolor": "#ff9933",
+                                "bikeflag": "1",
+                                "delay": "0"
+                            },
+                            {
+                                "minutes": "37",
+                                "platform": "2",
+                                "direction": "South",
+                                "length": "4",
+                                "color": "ORANGE",
+                                "hexcolor": "#ff9933",
+                                "bikeflag": "1",
+                                "delay": "0"
+                            },
+                            {
+                                "minutes": "57",
+                                "platform": "2",
+                                "direction": "South",
+                                "length": "4",
+                                "color": "ORANGE",
+                                "hexcolor": "#ff9933",
+                                "bikeflag": "1",
+                                "delay": "0"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "message": ""
+    }
+}

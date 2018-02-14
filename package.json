@@ -1,0 +1,51 @@
+{
+    "name": "bart-go",
+    "version": "1.0.0",
+    "description": "An API to make better BART plans",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "jest --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tylerlan/bart-go.git"
+    },
+    "author": "tylerlan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tylerlan/bart-go/issues"
+    },
+    "homepage": "https://github.com/tylerlan/bart-go#readme",
+    "dependencies": {
+        "axios": "^0.17.1",
+        "body-parser": "^1.18.2",
+        "boom": "^7.1.1",
+        "cors": "^2.8.4",
+        "dotenv": "^4.0.0",
+        "express": "^4.16.2",
+        "moment": "^2.20.1",
+        "morgan": "^1.9.0"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^8.0.2",
+        "babel-preset-env": "^1.6.1",
+        "chai": "^4.1.2",
+        "eslint": "^4.12.0",
+        "eslint-config-airbnb": "^16.1.0",
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-plugin-import": "^2.8.0",
+        "jest": "^22.0.4",
+        "mocha": "^4.0.1",
+        "node-mocks-http": "^1.6.6",
+        "nodemon": "^1.12.1",
+        "sinon": "3.0.0",
+        "superagent": "^3.8.2",
+        "supertest": "^3.0.0"
+    },
+    "engines": {
+        "node": "8.1.3"
+    }
+}
