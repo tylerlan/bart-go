@@ -71,6 +71,10 @@ function produceResults(startingPoint) {
             } (${leg['@origTimeMin']} to ${leg['@destTimeMin']})`;
         });
 
+        // it typically takes 5-7 minutes to bike to Lake Merritt station,
+        // and around 10-12 minutes to bike to 12th st
+        //
+        // the fastest I've gotten from the office to Downtown Berkely Station is 3 minutes
         let tripInfo = {
             'If you leave NOW, you have': `${whenToLeave} minutes`,
             departure: departureTime,
@@ -106,14 +110,14 @@ router.get(
 /* ==================================================================== */
 
 router.get(
-    '/homeToCivic',
+    '/homeToWork',
     asyncMiddleware(async (req, res, next) => {
-        let og = 'lake';
-        let og2 = '12th';
-        let dest = 'civc';
+        let og = 'Lake Merritt';
+        let og2 = '12th St. Oakland City Center';
+        let dest = 'Downtown Berkeley';
 
-        const rawData = await getSomeData(og, dest);
-        const rawData2 = await getSomeData(og2, dest);
+        const rawData = await getSomeData(stationAbrvMap[og], stationAbrvMap[dest]);
+        const rawData2 = await getSomeData(stationAbrvMap[og2], stationAbrvMap[dest]);
 
         const text = `Options for getting from ${og} to ${dest}`;
         const text2 = `Options for getting from ${og2} to ${dest}`;
@@ -125,9 +129,84 @@ router.get(
     })
 );
 
+router.get(
+    '/workToHome',
+    asyncMiddleware(async (req, res, next) => {
+        let og = 'Downtown Berkeley';
+        let dest = 'Lake Merritt';
+
+        const rawData = await getSomeData(stationAbrvMap[og], stationAbrvMap[dest]);
+
+        const text = `Options for getting from ${og} to ${dest}`;
+
+        const trips = produceResults(rawData.root.schedule);
+
+        res.json({ [text]: trips });
+    })
+);
+
+// for visiting my parents, or game night at dan's house
+router.get(
+    '/homeToCivic',
+    asyncMiddleware(async (req, res, next) => {
+        let og = 'Lake Merritt';
+        let og2 = '12th St. Oakland City Center';
+        let dest = 'Civic Center (SF)';
+
+        const rawData = await getSomeData(stationAbrvMap[og], stationAbrvMap[dest]);
+        const rawData2 = await getSomeData(stationAbrvMap[og2], stationAbrvMap[dest]);
+
+        const text = `Options for getting from ${og} to ${dest}`;
+        const text2 = `Options for getting from ${og2} to ${dest}`;
+
+        const trips = produceResults(rawData.root.schedule);
+        const trips2 = produceResults(rawData2.root.schedule);
+
+        res.json({ [text]: trips, [text2]: trips2 });
+    })
+);
+
+// for visiting Galvanize or other appointments in SOMA or downtown
+router.get(
+    '/homeToMontgomery',
+    asyncMiddleware(async (req, res, next) => {
+        let og = 'Lake Merritt';
+        let og2 = '12th St. Oakland City Center';
+        let dest = 'Montgomery St. (SF)';
+
+        const rawData = await getSomeData(stationAbrvMap[og], stationAbrvMap[dest]);
+        const rawData2 = await getSomeData(stationAbrvMap[og2], stationAbrvMap[dest]);
+
+        const text = `Options for getting from ${og} to ${dest}`;
+        const text2 = `Options for getting from ${og2} to ${dest}`;
+
+        const trips = produceResults(rawData.root.schedule);
+        const trips2 = produceResults(rawData2.root.schedule);
+
+        res.json({ [text]: trips, [text2]: trips2 });
+    })
+);
+
+// for game night at allens's house
+router.get(
+    '/workToGlen',
+    asyncMiddleware(async (req, res, next) => {
+        let og = 'Downtown Berkeley';
+        let dest = 'Glen Park (SF)';
+
+        const rawData = await getSomeData(stationAbrvMap[og], stationAbrvMap[dest]);
+
+        const text = `Options for getting from ${og} to ${dest}`;
+
+        const trips = produceResults(rawData.root.schedule);
+
+        res.json({ [text]: trips });
+    })
+);
+
 /* ==================================================================== */
 
-http: function returnTrainsAndDepartures(station) {
+function returnTrainsAndDepartures(station) {
     const trainsDepartingFromStation = {};
 
     station[0].etd.forEach(train => {
