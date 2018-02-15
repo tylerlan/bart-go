@@ -184,146 +184,126 @@
 
 
 
-    // 20180212230129
-    // http://localhost:8005/workToLake
+// 20180212222558
+// http://localhost:8005/workToLake
 
-    {
-      "?xml": {
-        "@version": "1.0",
-        "@encoding": "utf-8"
+{
+  "date": "Feb 12, 2018",
+  "time": "10:25 PM",
+  "before": "0",
+  "after": "2",
+  "request": {
+    "trip": [
+      {
+        "@origin": "DBRK",
+        "@destination": "LAKE",
+        "@fare": "2.50",
+        "@origTimeMin": "10:28 PM",
+        "@origTimeDate": "02/12/2018 ",
+        "@destTimeMin": "10:43 PM",
+        "@destTimeDate": "02/12/2018",
+        "@clipper": "0.75",
+        "@tripTime": "15",
+        "@co2": "3.42",
+        "fares": {
+          "@level": "normal",
+          "fare": [
+            {
+              "@amount": "2.00",
+              "@class": "clipper",
+              "@name": "Clipper"
+            },
+            {
+              "@amount": "2.50",
+              "@class": "cash",
+              "@name": "BART Blue Ticket"
+            },
+            {
+              "@amount": "0.75",
+              "@class": "rtcclipper",
+              "@name": "Senior/Disabled Clipper"
+            },
+            {
+              "@amount": "1.00",
+              "@class": "student",
+              "@name": "Youth Clipper"
+            }
+          ]
+        },
+        "leg": [
+          {
+            "@order": "1",
+            "@transfercode": "",
+            "@origin": "DBRK",
+            "@destination": "LAKE",
+            "@origTimeMin": "10:28 PM",
+            "@origTimeDate": "02/12/2018",
+            "@destTimeMin": "10:43 PM",
+            "@destTimeDate": "02/12/2018",
+            "@line": "ROUTE 4",
+            "@bikeflag": "1",
+            "@trainHeadStation": "WARM",
+            "@load": "2",
+            "@trainId": "2232215",
+            "@trainIdx": "70"
+          }
+        ]
       },
-      "root": {
-        "@id": "1",
-        "uri": {
-          "#cdata-section": "http://api.bart.gov/api/sched.aspx?cmd=depart&orig=dbrk&dest=lake&date=now&b=0&a=2&l=0&json=y"
+      {
+        "@origin": "DBRK",
+        "@destination": "LAKE",
+        "@fare": "2.50",
+        "@origTimeMin": "10:48 PM",
+        "@origTimeDate": "02/12/2018 ",
+        "@destTimeMin": "11:03 PM",
+        "@destTimeDate": "02/12/2018",
+        "@clipper": "0.75",
+        "@tripTime": "15",
+        "@co2": "3.42",
+        "fares": {
+          "@level": "normal",
+          "fare": [
+            {
+              "@amount": "2.00",
+              "@class": "clipper",
+              "@name": "Clipper"
+            },
+            {
+              "@amount": "2.50",
+              "@class": "cash",
+              "@name": "BART Blue Ticket"
+            },
+            {
+              "@amount": "0.75",
+              "@class": "rtcclipper",
+              "@name": "Senior/Disabled Clipper"
+            },
+            {
+              "@amount": "1.00",
+              "@class": "student",
+              "@name": "Youth Clipper"
+            }
+          ]
         },
-        "origin": "DBRK",
-        "destination": "LAKE",
-        "sched_num": "46",
-        "schedule": {
-          "date": "Feb 12, 2018",
-          "time": "11:01 PM",
-          "before": "0",
-          "after": "2",
-          "request": {
-            "trip": [
-              {
-                "@origin": "DBRK",
-                "@destination": "LAKE",
-                "@fare": "2.50",
-                "@origTimeMin": "11:08 PM",
-                "@origTimeDate": "02/12/2018 ",
-                "@destTimeMin": "11:23 PM",
-                "@destTimeDate": "02/12/2018",
-                "@clipper": "0.75",
-                "@tripTime": "15",
-                "@co2": "3.42",
-                "fares": {
-                  "@level": "normal",
-                  "fare": [
-                    {
-                      "@amount": "2.00",
-                      "@class": "clipper",
-                      "@name": "Clipper"
-                    },
-                    {
-                      "@amount": "2.50",
-                      "@class": "cash",
-                      "@name": "BART Blue Ticket"
-                    },
-                    {
-                      "@amount": "0.75",
-                      "@class": "rtcclipper",
-                      "@name": "Senior/Disabled Clipper"
-                    },
-                    {
-                      "@amount": "1.00",
-                      "@class": "student",
-                      "@name": "Youth Clipper"
-                    }
-                  ]
-                },
-                "leg": [
-                  {
-                    "@order": "1",
-                    "@transfercode": "",
-                    "@origin": "DBRK",
-                    "@destination": "LAKE",
-                    "@origTimeMin": "11:08 PM",
-                    "@origTimeDate": "02/12/2018",
-                    "@destTimeMin": "11:23 PM",
-                    "@destTimeDate": "02/12/2018",
-                    "@line": "ROUTE 4",
-                    "@bikeflag": "1",
-                    "@trainHeadStation": "WARM",
-                    "@load": "1",
-                    "@trainId": "2272255",
-                    "@trainIdx": "72"
-                  }
-                ]
-              },
-              {
-                "@origin": "DBRK",
-                "@destination": "LAKE",
-                "@fare": "2.50",
-                "@origTimeMin": "11:28 PM",
-                "@origTimeDate": "02/12/2018 ",
-                "@destTimeMin": "11:43 PM",
-                "@destTimeDate": "02/12/2018",
-                "@clipper": "0.75",
-                "@tripTime": "15",
-                "@co2": "3.42",
-                "fares": {
-                  "@level": "normal",
-                  "fare": [
-                    {
-                      "@amount": "2.00",
-                      "@class": "clipper",
-                      "@name": "Clipper"
-                    },
-                    {
-                      "@amount": "2.50",
-                      "@class": "cash",
-                      "@name": "BART Blue Ticket"
-                    },
-                    {
-                      "@amount": "0.75",
-                      "@class": "rtcclipper",
-                      "@name": "Senior/Disabled Clipper"
-                    },
-                    {
-                      "@amount": "1.00",
-                      "@class": "student",
-                      "@name": "Youth Clipper"
-                    }
-                  ]
-                },
-                "leg": [
-                  {
-                    "@order": "1",
-                    "@transfercode": "",
-                    "@origin": "DBRK",
-                    "@destination": "LAKE",
-                    "@origTimeMin": "11:28 PM",
-                    "@origTimeDate": "02/12/2018",
-                    "@destTimeMin": "11:43 PM",
-                    "@destTimeDate": "02/12/2018",
-                    "@line": "ROUTE 4",
-                    "@bikeflag": "1",
-                    "@trainHeadStation": "WARM",
-                    "@load": "1",
-                    "@trainId": "2292315",
-                    "@trainIdx": "73"
-                  }
-                ]
-              }
-            ]
+        "leg": [
+          {
+            "@order": "1",
+            "@transfercode": "",
+            "@origin": "DBRK",
+            "@destination": "LAKE",
+            "@origTimeMin": "10:48 PM",
+            "@origTimeDate": "02/12/2018",
+            "@destTimeMin": "11:03 PM",
+            "@destTimeDate": "02/12/2018",
+            "@line": "ROUTE 4",
+            "@bikeflag": "1",
+            "@trainHeadStation": "WARM",
+            "@load": "1",
+            "@trainId": "2252235",
+            "@trainIdx": "71"
           }
-        },
-        "message": {
-          "co2_emissions": {
-            "#cdata-section": "<p>CO<sub>2</sub> emissions saved by this BART trip: <strong>3.4 pounds.</strong> <a href=\"http://www.bart.gov/guide/carbon\">Read more</a></p>"
-          }
-        }
+        ]
       }
-    }
+    ]
+  }
+}
