@@ -19,8 +19,21 @@ app.use(cors());
 app.use(router);
 app.use('/departures', departures);
 
-app.get('/', (req, res) => {
+app.get('/help', (req, res) => {
+    res.json({
+        'Some Queries To Try': [
+            '/homeToWork',
+            '/workToHome',
+            '/homeToCivic',
+            '/homeToMontgomery',
+            '/workToGlen'
+        ]
+    });
     res.status(200).send('Bart GO!!!');
+});
+
+app.get('/', (req, res) => {
+    res.status(200).send('Bart GO!!! -- for list fo queries, checkout out /help');
 });
 
 /* ========================
