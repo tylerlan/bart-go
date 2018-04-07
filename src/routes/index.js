@@ -7,7 +7,7 @@ const router = express.Router();
 
 /* ==================================================================== */
 
-const { savedCommutes, stationAbrvMap } = require('../utils');
+const { savedCommutes, stationAbrvMap, abrvStationMap, shorthand } = require('../utils');
 const { morning, evening } = savedCommutes;
 
 /* ==================================================================== */
@@ -89,6 +89,28 @@ function produceResults(startingPoint) {
 
     return trips;
 }
+
+/* ==================================================================== */
+
+router.get(
+    '/:origin/:destination',
+    asyncMiddleware(async (req, res, next) => {
+        let { origin, destination } = req.params;
+        // e.g. 'dbrk/12th'
+
+        origin = shorthand[origin] || origin;
+        destination = shorthand[destination] || destination;
+
+        const rawData = await getSomeData(origin, destination);
+        const text = `Options for getting from ${abrvStationMap[origin]} to ${
+            abrvStationMap[destination]
+        }`;
+
+        const trips = produceResults(rawData.root.schedule);
+
+        res.json({ [text]: trips });
+    })
+);
 
 /* ==================================================================== */
 

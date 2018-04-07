@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const departures = require('./src/routes/departures');
 const router = require('./src/routes/index');
+const { abrvStationMap } = require('./src/utils');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
@@ -21,13 +22,15 @@ app.use('/departures', departures);
 
 app.get('/help', (req, res) => {
     res.json({
-        'Some Queries To Try': [
+        'Some Preset Queries To Try': [
             '/homeToWork',
             '/workToHome',
             '/homeToCivic',
             '/homeToMontgomery',
             '/workToGlen'
-        ]
+        ],
+        'Generalized Query': '/:origin/:destination',
+        'Abbriviation Map': abrvStationMap
     });
     res.status(200).send('Bart GO!!!');
 });
